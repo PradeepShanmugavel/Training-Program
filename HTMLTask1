@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Icons with Tooltip</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+        .social-icons a::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+        .social-icons a:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+        .social-icons .facebook {
+            background-color: #3b5998;
+        }
+        .social-icons .twitter {
+            background-color: #1da1f2;
+        }
+        .social-icons .instagram {
+            background-color: #e4405f;
+        }
+        .social-icons .linkedin {
+            background-color: #0077b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="social-icons">
+        <a href="https://facebook.com" class="facebook" data-tooltip="Facebook">F</a>
+        <a href="https://twitter.com" class="twitter" data-tooltip="Twitter">T</a>
+        <a href="https://instagram.com" class="instagram" data-tooltip="Instagram">I</a>
+        <a href="https://linkedin.com" class="linkedin" data-tooltip="LinkedIn">L</a>
+    </div>
+</body>
+</html>
+
+
+
